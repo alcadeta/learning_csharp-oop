@@ -12,6 +12,12 @@ class Program
         Console.WriteLine($"Computer Name => {computer.Name}");
         Console.WriteLine($"Is Computer => {isComputer}");
 
+        computer.TogglePower();
+        Console.WriteLine($"Computer is On => {computer.IsOn}");
+
+        computer.TogglePower();
+        Console.WriteLine($"Computer is On => {computer.IsOn}");
+
         Console.Read();
     }
 }
