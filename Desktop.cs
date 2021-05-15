@@ -1,7 +1,14 @@
 namespace OOPExamples
 {
-    internal class Desktop : Computer
+    public enum CaseType { Tower, MiniTower }
+
+    class Desktop : Computer
     {
-        public Desktop(string name) : base(name) { }
+        public CaseType CaseType { get; private set; }
+
+        public Desktop(string name, CaseType caseType) : base(name)
+        {
+            CaseType = caseType;
+        }
     }
 }

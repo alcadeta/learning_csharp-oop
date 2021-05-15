@@ -1,20 +1,23 @@
 ﻿using System;
-using OOPExamples;
 
-class Program
+namespace OOPExamples
 {
-    static void Main(string[] args)
+    class Program
     {
-        var computer = new Desktop("Generic Computer");
-        var isComputer = computer is Computer;
+        private static void Main(string[] args)
+        {
+            var computer = new Desktop("Generic Computer", CaseType.Tower);
+            Console.WriteLine($"Computer Type => {computer.GetType()}");
+            Console.WriteLine($"Computer Name => {computer.Name}");
+            Console.WriteLine($"Computer Case => {computer.CaseType}");
 
-        Console.WriteLine($"Computer Type => {computer.GetType()}");
-        Console.WriteLine($"Computer Name => {computer.Name}");
-        Console.WriteLine($"Is Computer => {isComputer}");
+            var isComputer = computer is Computer;
+            Console.WriteLine($"Is Computer => {isComputer}");
 
-        computer.TogglePower();
-        Console.WriteLine($"Computer is On => {computer.IsOn}");
+            computer.TogglePower();
+            Console.WriteLine($"Computer is On => {computer.IsOn}");
 
-        Console.Read();
+            Console.Read();
+        }
     }
 }
