@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace OOPExamples
 {
@@ -6,12 +8,12 @@ namespace OOPExamples
     {
         private static void Main(string[] args)
         {
-            var computer = new Desktop("Generic Computer", CaseType.Tower);
-            // var computer = new Laptop("Generic Laptop", 1024, 768);
+            // var computer = new Desktop("Generic Computer", CaseType.Tower);
+            var computer = new Laptop("Generic Laptop", 1024, 768);
 
             Console.WriteLine($"Computer Type => {computer.GetType()}");
             Console.WriteLine($"Computer Name => {computer.Name}");
-            Console.WriteLine($"Computer Case => {computer.CaseType}");
+            // Console.WriteLine($"Computer Case => {computer.CaseType}");
 
             var isComputer = computer is Computer;
             Console.WriteLine($"Is Computer => {isComputer}");
@@ -19,8 +21,12 @@ namespace OOPExamples
             computer.TogglePower();
             Console.WriteLine($"Computer is On => {computer.IsOn}");
 
-            computer.ToggleSleep();
-            Console.WriteLine($"Computer is Sleeping => {computer.IsSleeping}");
+            var sleepingComputer = computer as ISleep;
+            if (sleepingComputer != null)
+            {
+                sleepingComputer.ToggleSleep();
+                Console.WriteLine($"Computer is Sleeping => {sleepingComputer.IsSleeping}");
+            }
 
             computer.TogglePower();
             Console.WriteLine($"Computer is On => {computer.IsOn}");

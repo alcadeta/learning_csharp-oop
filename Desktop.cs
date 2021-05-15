@@ -4,7 +4,7 @@ namespace OOPExamples
 {
     public enum CaseType { Tower, MiniTower }
 
-    class Desktop : Computer
+    class Desktop : Computer, ISleep
     {
         public CaseType CaseType { get; private set; }
 
