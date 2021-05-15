@@ -7,6 +7,8 @@ namespace OOPExamples
         private static void Main(string[] args)
         {
             var computer = new Desktop("Generic Computer", CaseType.Tower);
+            // var computer = new Laptop("Generic Laptop", 1024, 768);
+
             Console.WriteLine($"Computer Type => {computer.GetType()}");
             Console.WriteLine($"Computer Name => {computer.Name}");
             Console.WriteLine($"Computer Case => {computer.CaseType}");
