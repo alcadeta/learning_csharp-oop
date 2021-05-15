@@ -10,9 +10,10 @@ namespace OOPExamples
         private void TurnOn() { IsOn = true; }
         private void TurnOff() { IsOn = false; }
 
-        public void TogglePower()
+        public virtual void TogglePower()
         {
-            if (IsOn) { TurnOff(); } else { TurnOn(); }
+            if (IsOn) { TurnOff(); }
+            else { TurnOn(); }
         }
     }
 }

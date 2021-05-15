@@ -17,6 +17,12 @@ namespace OOPExamples
             computer.TogglePower();
             Console.WriteLine($"Computer is On => {computer.IsOn}");
 
+            computer.ToggleSleep();
+            Console.WriteLine($"Computer is Sleeping => {computer.IsSleeping}");
+
+            computer.TogglePower();
+            Console.WriteLine($"Computer is On => {computer.IsOn}");
+
             Console.Read();
         }
     }
