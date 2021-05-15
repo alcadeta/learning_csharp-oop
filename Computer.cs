@@ -2,7 +2,7 @@ namespace OOPExamples
 {
     abstract class Computer
     {
-        public string Name { get; private set; }
+        public virtual string Name { get; private set; }
         public bool IsOn { get; private set; }
 
         protected Computer(string name) { Name = name; }
