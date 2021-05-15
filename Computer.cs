@@ -1,35 +1,14 @@
 namespace OOPExamples
 {
-    public class Computer
+    internal abstract class Computer
     {
         public string Name { get; private set; }
         public bool IsOn { get; private set; }
 
-        public Computer(string name)
-        {
-            Name = name;
-        }
+        protected Computer(string name) { Name = name; }
 
-        protected void TurnOn()
-        {
-            IsOn = true;
-        }
-
-        protected void TurnOff()
-        {
-            IsOn = false;
-        }
-
-        public void TogglePower()
-        {
-            if (IsOn)
-            {
-                TurnOff();
-            }
-            else
-            {
-                TurnOn();
-            }
-        }
+        private void TurnOn() { IsOn = true; }
+        private void TurnOff() { IsOn = false; }
+        public void TogglePower() { IsOn = !IsOn; }
     }
 }
