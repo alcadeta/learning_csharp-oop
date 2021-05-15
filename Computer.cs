@@ -2,6 +2,6 @@ namespace OOPExamples
 {
     public class Computer
     {
-        public string name;
+        public string Name { get; set; } = "Unknown";
     }
 }

@@ -11,8 +11,8 @@ class Program
         var isComputer = computer is Computer;
         Console.WriteLine($"Is Computer => {isComputer}");
 
-        computer.name = "Generic Computer";
-        Console.WriteLine($"Computer Name => {computer.name}");
+        computer.Name = "Generic Computer";
+        Console.WriteLine($"Computer Name => {computer.Name}");
 
         Console.Read();
     }
