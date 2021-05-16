@@ -1,19 +1,20 @@
 namespace OOPExamples
 {
-    abstract class Computer
+    internal abstract class Computer : IPowerOn
     {
+        protected Computer(string name)
+        {
+            Name = name;
+            PowerController = new PowerController();
+        }
+
+        protected IPowerOn PowerController { get; private set; }
         public virtual string Name { get; private set; }
-        public bool IsOn { get; private set; }
-
-        protected Computer(string name) { Name = name; }
-
-        private void TurnOn() { IsOn = true; }
-        private void TurnOff() { IsOn = false; }
+        public bool IsOn => PowerController.IsOn;
 
         public virtual void TogglePower()
         {
-            if (IsOn) { TurnOff(); }
-            else { TurnOn(); }
+            PowerController.TogglePower();
         }
     }
 }

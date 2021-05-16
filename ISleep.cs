@@ -1,6 +1,6 @@
 namespace OOPExamples
 {
-    public interface ISleep
+    internal interface ISleep
     {
         bool IsSleeping { get; }
         void ToggleSleep();

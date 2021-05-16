@@ -1,18 +1,17 @@
 namespace OOPExamples
 {
-    class Laptop : Computer, ISleep
+    internal class Laptop : Computer, ISleep
     {
-        public Display Display { get; private set; }
-
         public Laptop(string name, int width, int height) : base(name)
         {
+            SleepController = new SleepController();
             Display = new Display(width, height);
         }
 
-        public bool IsSleeping { get; }
-        public void ToggleSleep()
-        {
-            throw new System.NotImplementedException();
-        }
+        private ISleep SleepController;
+        public Display Display { get; private set; }
+
+        public bool IsSleeping => SleepController.IsSleeping;
+        public void ToggleSleep() => SleepController.ToggleSleep();
     }
 }
